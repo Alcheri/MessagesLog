@@ -6,9 +6,11 @@
 ###
 
 from supybot import conf, registry
+
 try:
     from supybot.i18n import PluginInternationalization
-    _ = PluginInternationalization('MessagesLog')
+
+    _ = PluginInternationalization("MessagesLog")
 except:
     # Placeholder that allows to run the plugin on a bot
     # without the i18n module
@@ -21,22 +23,23 @@ def configure(advanced):
     # user or not.  You should effect your configuration by manipulating the
     # registry as appropriate.
     from supybot.questions import expect, anything, something, yn
-    conf.registerPlugin('MessagesLog', True)
+
+    conf.registerPlugin("MessagesLog", True)
 
 
-MessagesLog = conf.registerPlugin('MessagesLog')
+MessagesLog = conf.registerPlugin("MessagesLog")
 conf.registerGlobalValue(
     MessagesLog,
-    'logFilePath',
+    "logFilePath",
     registry.String(
-        '~/runbot/logs/messages.log',
+        "~/runbot/logs/messages.log",
         _("""Path to the messages.log file to read."""),
     ),
 )
 
 conf.registerGlobalValue(
     MessagesLog,
-    'lineCount',
+    "lineCount",
     registry.PositiveInteger(
         20,
         _("""Default number of lines to read from the end of the log file."""),
@@ -45,7 +48,7 @@ conf.registerGlobalValue(
 
 conf.registerGlobalValue(
     MessagesLog,
-    'maxLineCount',
+    "maxLineCount",
     registry.PositiveInteger(
         100,
         _("""Maximum allowed line count to return in a single request."""),

@@ -20,14 +20,15 @@ __author__ = supybot.Author("Barry Suridge", "Alcheri", "barry.suridge@gmail.com
 
 # This is a dictionary mapping supybot.Author instances to lists of
 # contributions.
-__contributors__ = {__author__: ['Initial development']}
+__contributors__ = {__author__: ["Initial development"]}
 
 # This is a url where the most recent plugin package can be downloaded.
-__url__ = 'https://github.com/Alcheri/MessagesLog'
+__url__ = "https://github.com/Alcheri/MessagesLog"
 
 from . import config
 from . import plugin
 from importlib import reload
+
 # In case we're being reloaded.
 reload(config)
 reload(plugin)
