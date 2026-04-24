@@ -67,7 +67,7 @@ class MessagesLog(callbacks.Plugin):
             irc.sendMsg(ircmsgs.notice(msg.nick, line))
         irc.reply(_("Sent %s log lines by notice.") % len(lines))
 
-    tail = wrap(tail, [optional("positiveInt")])
+    tail = wrap(tail, [("checkCapability", "admin"), optional("positiveInt")])
 
 
 Class = MessagesLog
